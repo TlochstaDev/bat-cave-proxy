@@ -106,26 +106,27 @@
   <div class="bat-prox-heading">
     <span class="bat-text">Bat</span> <span class="prox-text">Prox</span>
   </div>
-  <div class="cool-typing-box">
+  <form class="cool-typing-box">
     <input type="text" id="urlbar" class="editable-text" value="Access Freely"
       onfocus="if(this.value=='Access Freely')this.value='';" onblur="if(this.value=='') this.value='Access Freely';">
-  </div>
+  </form>
   <div class="random-font-description" id="randomDescription"></div>
   <div class="timer" id="timer"></div>
   <div class="version-text">v1</div>
 
   <script src="/js/design.js"></script>
+  <script src="/js/index.js"></script>
+  <script src="/uv/uv.bundle.js"></script>
+<script src="/uv/uv.config.js"></script>
   <script>
     var input = document.getElementById("urlbar");
 
     input.addEventListener("keypress", function (event) {
-      if (event.key === "Enter") {
-        runService();
-      }
+   if(e && e.keyCode == 13) {
+      document.forms[0].submit();
+   }
     });
-    function runService() {
-      console.log(urlbar.value);
-    }</script>
+</script>
 </body>
 
 </html>
